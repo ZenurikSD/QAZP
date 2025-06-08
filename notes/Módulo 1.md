@@ -4,14 +4,16 @@ ___
 - [x] Material
 - [x] Atividade
 - [ ] Reunião de discussão
-
-Usuário: admin
-Senha: 123
-
-## Exercícios
+___
+# Exercícios
 - [x] Pensar em cenários de teste e executá-los no sistema
 - [x] Escrever alguns desses cenários em Gherkin e step-by-step
 - [x] Ler o material
+- [x] Automatizar alguns dos cenários no Cypress
+
+# Dificuldades
+- Não consegui usar o `cy.intercept` para o request de enviar o orçamento. Parece que o request é feito muito rápido e o cypress não detecta ele a tempo? 
+
 
 # Cenários de teste
 ## Landing page
@@ -66,7 +68,7 @@ DADO que o usuário está na página "Clientes" do sistema
 
 QUANDO ele clica no botão "Criar cliente"
 E um modal "Criar cliente" aparece com seções de "Informações pessoais" e "Localização"
-E ele preenche o campo "Nome Completo" com "Antônio Ramosantonio"
+E ele preenche o campo "Nome Completo" com "Antônio Ramos"
 E ele preenche o campo "Documento" com "75718491011"
 E ele preenche o campo "Telefone" com "11912345678"
 E ele preenche o campo "Email" com "antonio@email.com"

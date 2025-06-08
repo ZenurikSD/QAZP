@@ -35,3 +35,10 @@
 //     }
 //   }
 // }
+
+Cypress.Commands.add('login', () => {
+    cy.contains('button > span', 'Login').click();
+    cy.get('input[id="username"]').type('admin');
+    cy.get('input[id="password"]').type('123');
+    cy.get('[data-testid="login-button"]').click();
+});
