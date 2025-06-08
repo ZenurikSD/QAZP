@@ -1,16 +1,17 @@
-Feature: Solicitar orçamento
+Funcionalidade: Solicitar orçamento
 
-Scenario: Send a valid Quote request
-    Given the user is on the landing page at "localhost:3000"
+Cenário: Enviar uma solicitação de orçamento válida
+    Dado que o usuário está na Landing page da página "localhost:3000"
 
-    When the user clicks on "Solicitar Orçamento" button
-    And the "Solicitar orçamento" modal appears
-    And the "Nome Completo" field is filled in with "Natália Martins"
-    And the "Email" field is filled in with "natmartins@email.com"
-    And the "Telefone" field is filled in with "11912345678"
-    And the option "Workshop" is selected on "Tipo do evento" field
-    And the "Público estimado" field is filled in with "15"
+    Quando o botão "Solicitar Orçamento" é clicado
+    E o modal "Solicitar orçamento" aparece
+    E o campo "Nome Completo" é preenchido com "Natália Martins"
+    E o campo "Email" é preenchido com "natmartins@email.com"
+    E o campo "Telefone" é preenchido com "11912345678"
+    E a opção "Workshop" é selecionada no campo "Tipo do evento"
+    E o campo "Público estimado" é preenchido com "15"
 
-    Then a success toast appears at the bottom-right corner of the screen with the message:
+    Then a green toast appears at the bottom-right corner of the screen with the message:
+    Então um toast verde aparece no canto inferior direito da janela com a mensagem:
         "Seu orçamento foi criado com sucesso! Em breve nossa equipe entrará em contato para fornecer mais informações"
-    And the network activity shows a "POST" request of the "Quote" file with a "201" response
+    E a atividade da rede inclui um request "POST" do arquivo "Quote" com "201" como resposta

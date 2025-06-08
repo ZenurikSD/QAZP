@@ -1,6 +1,6 @@
 var baseUrl = 'http://localhost:3000/'
 
-describe('Login', () => {
+describe('Quotations', () => {
   beforeEach(() => {
     cy.visit(baseUrl);
   })
