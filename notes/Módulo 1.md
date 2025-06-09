@@ -3,7 +3,7 @@ ___
 - [x] Aula
 - [x] Material
 - [x] Atividade
-- [ ] Reunião de discussão
+- [x] Reunião de discussão
 ___
 # Exercícios
 - [x] Pensar em cenários de teste e executá-los no sistema
