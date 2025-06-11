@@ -42,3 +42,7 @@ Cypress.Commands.add('login', () => {
     cy.get('input[id="password"]').type('123');
     cy.get('[data-testid="login-button"]').click();
 });
+
+Cypress.Commands.add('logout', () => {
+    cy.contains('button > span', 'Logout').click();
+})

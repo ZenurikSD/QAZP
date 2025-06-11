@@ -1,3 +1,5 @@
+import { HtmlContext } from "next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints";
+
 export {};
 
 declare global {
@@ -6,7 +8,8 @@ declare global {
             /**
              * Logs in into QAZP using the Administrator account
              */
-            login(): Chainable<JQuery<HTMLElement>>
+            login(): Chainable<JQuery<HTMLElement>>,
+            logout(): Chainable<JQuery<HTMLElement>>
         }
     }
 }
