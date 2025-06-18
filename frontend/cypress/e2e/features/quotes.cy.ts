@@ -1,4 +1,5 @@
 var baseUrl = 'http://localhost:3000/'
+import { addPhoneMask } from "../../support/utils";
 
 var num = Math.floor(Math.random()*100);
 const quotation = {
@@ -47,9 +48,8 @@ describe('Quotations', () => {
 
     cy.get('tbody > tr').last().within(() => {
       cy.get('td').eq(0).should('have.text', quotation.name)
-      cy.get('td').eq(1).should('have.text', quotation.email)
-      //TO-DO: add phone mask somehow
-      // cy.get('td').eq(2).should('have.text', quotation.phone)  
+      cy.get('td').eq(1).should('have.text', quotation.email)   
+      cy.get('td').eq(2).should('have.text', addPhoneMask(quotation.phone))  
       cy.get('td').eq(3).should('have.text', quotation.eventType)
       cy.get('td').eq(4).should('have.text', quotation.audienceSize)
     });

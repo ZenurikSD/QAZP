@@ -2,7 +2,8 @@ Segunda, 09 Jun 2025
 ___
 - [ ] Aula
 - [ ] Material
-- [ ] Exercícios: Trabalhar com  `beforeEach` e `afterEach`
+- [ ] Exercícios: 
+	- [x] Trabalhar com  `beforeEach` e `afterEach`
 - [ ] Reunião de discussão
 ___
 
