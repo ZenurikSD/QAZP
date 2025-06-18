@@ -4,6 +4,8 @@ ___
 - [ ] Material
 - [ ] Exercícios: 
 	- [x] Trabalhar com  `beforeEach` e `afterEach`
+	- [ ] Adicionar data-testids nos componentes
+	- [x] Criar custom commands
 - [ ] Reunião de discussão
 ___
 

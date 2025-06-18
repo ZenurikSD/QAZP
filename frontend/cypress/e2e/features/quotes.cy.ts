@@ -1,4 +1,3 @@
-var baseUrl = 'http://localhost:3000/'
 import { addPhoneMask } from "../../support/utils";
 
 var num = Math.floor(Math.random()*100);
@@ -12,18 +11,18 @@ const quotation = {
 
 describe('Quotations', () => {
   beforeEach(() => {
-    cy.visit(baseUrl);
+    cy.visit('/');
   })
 
   it('Should send a Quote request successfully', () => {
     cy.contains('button > span', 'Solicite um orçamento').click();
 
-    cy.get('input[placeholder="Digite o nome completo"]').type("Lvcas");
-    cy.get('input[placeholder="Digite o email"]').type("melhormusicobr@email.com");
-    cy.get('input[placeholder="Digite o telefone"]').type("11966601666");
-    cy.get('input[placeholder="Digite o público estimado"]').type("15");
+    cy.get('input[placeholder="Digite o nome completo"]').type(quotation.name);
+    cy.get('input[placeholder="Digite o email"]').type(quotation.email);
+    cy.get('input[placeholder="Digite o telefone"]').type(quotation.phone);
+    cy.get('input[placeholder="Digite o público estimado"]').type(quotation.audienceSize);
     cy.contains('button > h1', 'Selecione o tipo do evento').click();
-    cy.contains('div[role="menuitem"]', 'Workshop').click();
+    cy.contains('div[role="menuitem"]', quotation.eventType).click();
     cy.contains('button > span', 'Enviar solicitação').click();
     
     cy.get('[data-sonner-toaster="true"]').within(() => {

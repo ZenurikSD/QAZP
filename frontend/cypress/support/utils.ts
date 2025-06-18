@@ -8,5 +8,5 @@ export function addPhoneMask(number: string): string{
         var secondfour = number.slice(7, 12);        
     }
 
-    return `(${ddd}) ${special}${firstfour}-${secondfour}`
+    return `(${ddd}) ${special}${firstfour}-${secondfour}`;
 }

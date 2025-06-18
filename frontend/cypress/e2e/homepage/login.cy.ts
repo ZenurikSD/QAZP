@@ -1,8 +1,6 @@
-var baseUrl = 'http://localhost:3000/'
-
 describe('Login', () => {
   beforeEach(() => {
-    cy.visit(baseUrl);
+    cy.visit('/');
   })
 
   it('Should login into QAZP Dashboard with Admin account successfully', () => {
@@ -14,7 +12,6 @@ describe('Login', () => {
 
     cy.get('.ant-modal-content').should('not.exist');
     cy.get('[data-sonner-toaster="true"]').should('be.visible').and('have.text', 'Bem-vindo, Administrador!')
-    cy.url({timeout: 10000}).should('eq', baseUrl+'dashboard');
+    cy.url({timeout: 10000}).should('eq', Cypress.config().baseUrl + '/dashboard');
   });
 })
-
