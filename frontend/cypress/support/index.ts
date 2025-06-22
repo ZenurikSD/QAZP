@@ -4,9 +4,11 @@ declare global {
     namespace Cypress {
         interface Chainable {
             /**
-             * Logs in into QAZP using the Administrator account
+             * Logs into QAZP
+             * @param username 
+             * @param password
              */
-            login(): Chainable<JQuery<HTMLElement>>,
+            login(username: string, password: string): Chainable<JQuery<HTMLElement>>,
             logout(): Chainable<JQuery<HTMLElement>>
         }
     }

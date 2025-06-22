@@ -50,7 +50,7 @@ describe('Quotations', () => {
     cy.get('[data-testid="request-modal-send-button"]').click();
     
     //Log in and open Orçamentos page
-    cy.login();
+    cy.login('admin', '123');
     cy.get('[data-testid="sidepanel-quote"]').click();
 
     cy.get('[data-testid="quote-page-table"] > tbody > tr', {timeout: 10000}).last().within(() => {
