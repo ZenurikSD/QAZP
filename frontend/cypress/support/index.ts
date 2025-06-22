@@ -1,5 +1,3 @@
-import { HtmlContext } from "next/dist/server/future/route-modules/app-page/vendored/contexts/entrypoints";
-
 export {};
 
 declare global {

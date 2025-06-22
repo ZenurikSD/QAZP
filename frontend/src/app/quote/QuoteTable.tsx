@@ -66,7 +66,10 @@ export function QuoteTable<TData, TValue>({
           className="max-w-sm border-primary font-bold text-center my-10"
         />
       </div>
-      <Table className="border-2 border-cyan-700">
+      <Table 
+        className="border-2 border-cyan-700" 
+        data-testid="quote-page-table"
+      >
         <TableHeader className="bg-cyan-700 text-gray-100">
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id}>

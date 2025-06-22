@@ -229,6 +229,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
             onBlur={() => handleBlur('fullName')}
             className={`p-2 mb-4 border rounded w-full ${fullNameError ? 'border-red-500' : 'border-slate-300'}`}
             required
+            data-testid="request-modal-fullname"
           />
           {fullNameError && (
             <div
@@ -259,6 +260,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
             className={`p-2 mb-4 border rounded w-full ${emailError ? 'border-red-500' : 'border-slate-300'}`}
             type="email"
             required
+            data-testid="request-modal-email"
           />
           {emailError && (
             <div
@@ -288,6 +290,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
             maxLength={15}
             className={`p-2 mb-4 border rounded w-full ${phoneNumberError ? 'border-red-500' : 'border-slate-300'}`}
             required
+            data-testid="request-modal-phone"
           />
           {phoneNumberError && (
             <div
@@ -323,6 +326,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
                 : 'border-gray-300'
                 }`}
               onBlur={() => setIsTouched(true)}
+              data-testid="request-modal-eventtype-dropdown"
             >
               <h1 className={`${!type ? 'text-gray-400' : 'text-black'} mt-1`}>
                 {type ? type : 'Selecione o tipo do evento'}
@@ -376,6 +380,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
             onBlur={() => handleBlur('estimatedAudience')}
             className={`p-2 mb-4 border rounded w-full ${estimatedAudienceError ? 'border-red-500' : 'border-slate-300'}`}
             required
+            data-testid="request-modal-audience"
           />
           {estimatedAudienceError && (
             <div
@@ -395,6 +400,7 @@ const QuoteModal: React.FC<QuoteModalProps> = ({ isVisible, onClose }) => {
           className="bg-primary text-secondary w-full mt-4"
           type="primary"
           onClick={() => quoteModelRequest()}
+          data-testid="request-modal-send-button"
         >
           {intl.formatMessage({ id: 'request.quote.button' })}
         </Button>

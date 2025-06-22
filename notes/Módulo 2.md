@@ -19,4 +19,6 @@ Os testes que devem ser automatizados primeiro são aqueles que
 
 
 # Dúvidas
-No primeiro vídeo do 2º módulo o Gustavo remove os testes de login e logout para colocar eles no beforeEach e afterEach, dizendo que não são mais necessários. Mas o teste ainda validava que a ação foi feita com sucesso, enquanto que os hooks não. Pra mim tinha que manter eles ainda.
+1. No primeiro vídeo do 2º módulo o Gustavo remove os testes de login e logout para colocar eles no beforeEach e afterEach, dizendo que não são mais necessários. Mas o teste ainda validava que a ação foi feita com sucesso, enquanto que os hooks não. Pra mim tinha que manter eles ainda.
+
+2. Qual a melhor maneira de validar que um orçamento foi criado no sistema quando o registro dele vai para a 2ª página da tabela?

@@ -89,6 +89,7 @@ const UserSideMenu = () => {
               <Link
                 href="/dashboard"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-dashboard"
               >
                 {intl.formatMessage({
                   id: 'side.nav.dashboard.option.label',
@@ -99,6 +100,7 @@ const UserSideMenu = () => {
               <Link
                 href="/quote"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-quote"
               >
                 {intl.formatMessage({
                   id: 'side.nav.quotes.option.label',
@@ -109,6 +111,7 @@ const UserSideMenu = () => {
               <Link
                 href="/clients"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-clients"
               >
                 {intl.formatMessage({
                   id: 'side.nav.clients.option.label',
@@ -119,6 +122,7 @@ const UserSideMenu = () => {
               <Link
                 href="/Materials"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-materials"
               >
                 {intl.formatMessage({
                   id: 'side.nav.materials.option.label',
@@ -129,6 +133,7 @@ const UserSideMenu = () => {
               <Link
                 href="/Events"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-events"
               >
                 {intl.formatMessage({
                   id: 'side.nav.events.option.label',
@@ -139,6 +144,7 @@ const UserSideMenu = () => {
               <Link
                 href="/Users"
                 className="block py-2 px-3 rounded hover:bg-gray-700"
+                data-testid="sidepanel-users"
               >
                 {intl.formatMessage({
                   id: 'side.nav.users.option.label',
@@ -154,6 +160,7 @@ const UserSideMenu = () => {
         <button
           className="text-white  items-center space-x-2 flex justify-center"
           onClick={handleLogout}
+          data-testid="sidepanel-logout"
         >
           <LogOut />
           <span>{intl.formatMessage({

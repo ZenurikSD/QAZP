@@ -44,5 +44,5 @@ Cypress.Commands.add('login', () => {
 });
 
 Cypress.Commands.add('logout', () => {
-    cy.contains('button > span', 'Logout').click();
+    cy.get('[data-testid="sidepanel-logout"]').click();
 })
