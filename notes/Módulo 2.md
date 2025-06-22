@@ -1,12 +1,11 @@
 Segunda, 09 Jun 2025
 ___
-- [ ] Aula
-- [ ] Material
-- [ ] Exercícios: 
+- [x] Aula
+- [x] Material
+- [x] Exercícios: 
 	- [x] Trabalhar com  `beforeEach` e `afterEach`
-	- [ ] Adicionar data-testids nos componentes
+	- [x] Adicionar data-testids nos componentes
 	- [x] Criar custom commands
-- [ ] Reunião de discussão
 ___
 
 # O que automatizar?
