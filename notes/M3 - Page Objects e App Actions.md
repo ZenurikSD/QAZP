@@ -1,10 +1,10 @@
 Domingo, 22 Jun 25
 ___
-- [ ] Aulas
-- [ ] Material
-- [ ] Exercícios
-	- [ ] Implementar PageObject em uma página/parte do sistema e incluir em um teste
-- [ ] Reunião de discussão
+- [x] Aulas
+- [x] Material
+- [x] Exercícios
+	- [x] Implementar PageObject em uma página/parte do sistema e incluir em um teste
+- [x] Reunião de discussão
 ____
 
 # Page Objects
@@ -18,9 +18,22 @@ Um Page Object pode guardar data-testids nos seus atributos então não é preci
 
 
 # App Actions
+App Action é um paradigma recente para executar ações e definir o estado da aplicação de uma forma que não interage com a página da mesma forma que um usuário faria. Ao invés disso, uma interface da lógica da aplicação é exposta aos testes (model property, APIs etc.), e o teste utiliza essa porta de acesso para alterar a UI "por debaixo dos panos", efetivamente tornando o teste muito mais rápido.
 
+O [artigo que introduz o conceito de App Actions](https://www.cypress.io/blog/stop-using-page-objects-and-start-using-app-actions) dá um exemplo: Se o meu site cria tarefas que podem ser completadas e eu tenho um teste que "Marca todas as tarefas como 'Concluída'", eu não preciso passar pela UI para criar tarefa por tarefa antes de começar o teste. Com App Actions eu posso invocar o método por trás da ação da UI: `createTodo()` e executar essa ação de pré-requisito de uma forma muito mais eficiente.
 
+## (ChatGPT) Vantagens das Application Actions
 
+1. **Testes ficam mais rápidos** por manipular diretamente o estado da aplicação ao invés de interagir com a UI.
+    
+2. **Código mais limpo e coerente**: reduz duplicação, elimina estado redundante presente nos Page Objects.
+    
+3. **Refatoração colaborativa**: testes passam a influenciar melhorias no modelo da aplicação, incentivando clareza e documentação.
+    
+4. **Erros específicos e isolados**: mudanças em uma feature quebram apenas os testes relacionados àquela feature.
+
+## Quando usar?
+(ChatGPT) **Uso seletivo de UI**: continue usando UI apenas para a parte que está sendo testada, mantendo o resto via Application Actions.
 
 
 ______

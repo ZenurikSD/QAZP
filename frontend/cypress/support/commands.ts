@@ -30,9 +30,13 @@ Cypress.Commands.add('login', (username: string, password: string) => {
     cy.contains('button > span', 'Login').click();
     cy.get('input[id="username"]').type(username);
     cy.get('input[id="password"]').type(password);
-    cy.get('[data-testid="login-button"]').click();
+    cy.get('[data-testid="login-enter-button"]').click();
 });
 
 Cypress.Commands.add('logout', () => {
     cy.get('[data-testid="sidepanel-logout"]').click();
-})
+});
+
+Cypress.Commands.add('sendQuoteRequest', (requestBody: any) => {
+    cy.request('POST', 'http://localhost:5196/api/Quote', requestBody);
+});

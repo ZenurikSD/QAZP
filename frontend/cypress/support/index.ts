@@ -9,7 +9,12 @@ declare global {
              * @param password
              */
             login(username: string, password: string): Chainable<JQuery<HTMLElement>>,
-            logout(): Chainable<JQuery<HTMLElement>>
+            logout(): Chainable<JQuery<HTMLElement>>,
+            /**
+             * Sends a Quote Request through the API
+             * @param requestBody An object with all necessary properties
+             */
+            sendQuoteRequest(requestBody: any): Chainable<any>,
         }
     }
 }

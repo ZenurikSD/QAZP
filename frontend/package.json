@@ -5,7 +5,7 @@
   "scripts": {
     "start:dev": "concurrently \"npm run start-backend\" \"npm run start-frontend\"",
     "start-frontend": "npm run dev",
-    "start-backend": "cd ../ZventsApi && dotnet ef database update && dotnet run",
+    "start-backend": "cd ../ZventsApi && dotnet-ef database update && dotnet run",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
