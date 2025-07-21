@@ -40,3 +40,11 @@ Cypress.Commands.add('logout', () => {
 Cypress.Commands.add('sendQuoteRequest', (requestBody: any) => {
     cy.request('POST', 'http://localhost:5196/api/Quote', requestBody);
 });
+
+Cypress.Commands.add('typeByTestId', (testId: string, text: string) => {
+    cy.get(`[data-testid="${testId}"]`).type(text);
+});
+
+Cypress.Commands.add('clickByTestId', (testId: string) => {
+    cy.get(`[data-testid="${testId}"]`).click();
+});

@@ -15,6 +15,8 @@ declare global {
              * @param requestBody An object with all necessary properties
              */
             sendQuoteRequest(requestBody: any): Chainable<any>,
+            typeByTestId(testId: string, text: string): Chainable<HTMLElement>;
+            clickByTestId(testId: string): Chainable<HTMLElement>;
         }
     }
 }

@@ -24,13 +24,13 @@ describe('Quotations', () => {
   it('Should send a Quote request successfully', () => {
     cy.contains('button > span', 'Solicite um orçamento').click();
 
-    cy.get('[data-testid="request-modal-fullname"]').type(quoteA.fullName);
-    cy.get('[data-testid="request-modal-email"]').type(quoteA.email);
-    cy.get('[data-testid="request-modal-phone"]').type(quoteA.phoneNumber);
-    cy.get('[data-testid="request-modal-audience"]').type(quoteA.estimatedAudience);
-    cy.get('[data-testid="request-modal-eventtype-dropdown"]').click();
+    cy.typeByTestId('request-modal-fullname', quoteA.fullName);
+    cy.typeByTestId('request-modal-email', quoteA.email);
+    cy.typeByTestId('request-modal-phone', quoteA.phoneNumber);
+    cy.typeByTestId('request-modal-audience', quoteA.estimatedAudience);
+    cy.clickByTestId('request-modal-eventtype-dropdown');
     cy.contains('div[role="menuitem"]', quoteA.eventType).click();
-    cy.get('[data-testid="request-modal-send-button"]').click();
+    cy.clickByTestId('request-modal-send-button');
     
     //TO-DO: substituir/adicionar um cy.intercept()
     cy.get('[data-sonner-toaster="true"]').within(() => {
@@ -43,7 +43,7 @@ describe('Quotations', () => {
     
     //Log in and open Orçamentos page
     cy.login('admin', '123');
-    cy.get('[data-testid="sidepanel-quote"]').click();
+    cy.get('[data-testid="sidepanel-quote"]', {timeout: 10000}).click();
 
     cy.get('[data-testid="quote-page-table"] > tbody > tr', {timeout: 10000}).last().within(() => {
       cy.get('td').eq(0).should('have.text', quoteB.fullName)
