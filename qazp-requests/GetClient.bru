@@ -1,0 +1,19 @@
+meta {
+  name: GetClient
+  type: http
+  seq: 2
+}
+
+get {
+  url: http://localhost:5196/api/Client/id/{{id}}
+  body: none
+  auth: inherit
+}
+
+vars:pre-request {
+  id: e616e397-6426-43e9-bb92-dadbc77e2bae
+}
+
+settings {
+  encodeUrl: true
+}

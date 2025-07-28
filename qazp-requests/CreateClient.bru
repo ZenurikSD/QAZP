@@ -1,0 +1,45 @@
+meta {
+  name: CreateClient
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:5196/api/Client
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "fullName": "{{name}}",
+    "documentId": "{{documentId}}",
+    "phoneNumber": "{{phoneNumber}}",
+    "email": "{{email}}",
+    "zipCode": "{{zipCode}}",
+    "addressName": "{{addressName}}",
+    "addressNumber": "{{addressNumber}}",
+    "addressComplement": "{{addressComplement}}",
+    "district": "{{district}}",
+    "state": "{{state}}",
+    "city": "{{city}}"
+  }
+}
+
+vars:pre-request {
+  name: Caroline Isadora Clarice Monteiro
+  documentId: 77896340895
+  phoneNumber: 9236787199
+  email: caroline_isadora_monteiro@geniustyres.com.br
+  zipCode: 69086709
+  addressName: Rua Savana
+  addressNumber: 601
+  addressComplement: 
+  district: Gilberto Mestrinho
+  state: AM
+  city: Manaus
+}
+
+settings {
+  encodeUrl: true
+}
