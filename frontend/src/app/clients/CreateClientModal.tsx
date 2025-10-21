@@ -309,6 +309,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                     id: 'create.client.page.fullName.field.placeholder',
                   })}
                   value={fullName}
+                  data-testid="newclient-fullname-field"
                   required
                 />
                 {fullNameError && (
@@ -342,6 +343,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   })}
                   value={documentId}
                   maxLength={18}
+                  data-testid="newclient-document-field"
                   required
                 />
                 {DocumentIdError && (
@@ -375,6 +377,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   value={phoneNumber}
                   maxLength={15}
                   type="text"
+                  data-testid="newclient-phone-field"
                 />
               </div>
             </div>
@@ -390,6 +393,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                 id: 'create.client.page.email.field.placeholder',
               })}
               value={email}
+              data-testid="newclient-email-field"
             />
           </div>
           <h1 className="text-2xl font-bold mt-8 mb-4">
@@ -415,6 +419,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                     maxLength={9}
                     onChange={handleZipCodeChange}
                     onBlur={() => handleBlur('zipCode')}
+                    data-testid="newclient-zipcode-field"
                     required
                   />
                   {zipCodeError && (
@@ -433,6 +438,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   <SearchIcon
                     className="p-2 h-10 w-10 cursor-pointer"
                     onClick={handleSearchClick}
+                    data-testid="newclient-searchzipcode-button"
                   />
                 </div>
               </div>
@@ -447,6 +453,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   value={addressName}
                   onChange={e => setAddressName(e.target.value)}
                   readOnly={true}
+                  data-testid="newclient-streetname-field"
                   disabled
                 />
                 {addressNameError && (
@@ -479,6 +486,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                     id: 'create.client.page.streetNumber.field.placeholder',
                   })}
                   value={addressNumber}
+                  data-testid="newclient-steetnumber-field"
                   required
                 />
                 {addressNumberError && (
@@ -508,6 +516,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                     id: 'create.client.page.streetComplement.field.placeholder',
                   })}
                   value={addressComplement}
+                  data-testid="newclient-streetcomplement-field"
                 />
               </div>
             </div>
@@ -523,6 +532,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   value={district}
                   onChange={e => setDistrict(e.target.value)}
                   readOnly={true}
+                  data-testid="newclient-district-field"
                   disabled={true}
                 />
                 {districtError && (
@@ -550,6 +560,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   value={state}
                   onChange={e => setState(e.target.value)}
                   readOnly={true}
+                  data-testid="newclient-state-field"
                   disabled
                 />
                 {stateError && (
@@ -577,6 +588,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                   value={city}
                   onChange={e => setCity(e.target.value)}
                   readOnly={true}
+                  data-testid="newclient-city-field"
                   disabled
                 />
                 {cityError && (
@@ -599,6 +611,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
             <Button
               className="bg-primary text-white w-[30%]"
               onClick={() => createClient()}
+              data-testid="newclient-create-button"
             >
               {intl.formatMessage({
                 id: 'create.client.page.create.client.button',

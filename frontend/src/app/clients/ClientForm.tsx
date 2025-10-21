@@ -318,6 +318,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
               placeholder={intl.formatMessage({
                 id: 'create.client.page.fullName.field.placeholder',
               })}
+              data-testid="client-fullname-field"
               required
             />
             {fullNameError && (
@@ -350,6 +351,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
               placeholder={intl.formatMessage({
                 id: 'create.client.page.document.field.placeholder',
               })}
+              data-testid="client-document-field"
             />
             {DocumentIdError && (
               <div
@@ -379,6 +381,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
               placeholder={intl.formatMessage({
                 id: 'create.client.page.phoneNumber.field.placeholder',
               })}
+              data-testid="client-phone-field"
             />
           </div>
         </div>
@@ -396,6 +399,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
               placeholder={intl.formatMessage({
                 id: 'create.client.page.email.field.placeholder',
               })}
+              data-testid="client-email-field"
             />
           </div>
           <div className="flex flex-col w-[40%] ml-3 relative">
@@ -414,6 +418,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                 onChange={handleZipCodeChange}
                 onBlur={() => handleBlur('zipCode')}
                 maxLength={9}
+                data-testid="client-zipcode-field"
               />
               {zipCodeError && (
                 <div
@@ -447,6 +452,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                 value={addressName}
                 onChange={e => setAddressName(e.target.value)}
                 readOnly={true}
+                data-testid="client-streetname-field"
                 disabled
               />
               {addressNameError && (
@@ -477,6 +483,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                   id: 'create.client.page.streetNumber.field.placeholder',
                 })}
                 className={`p-2 mb-4 border rounded w-full ${addressNumberError ? 'border-red-500' : 'border-slate-300'}`}
+                data-testid="client-streetnumber-field"
                 required
               />
               {addressNumberError && (
@@ -506,6 +513,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                   id: 'create.client.page.streetComplement.field.placeholder',
                 })}
                 className="p-2 mb-4 border rounded w-full "
+                data-testid="client-streetcomplement-field"
               />
             </div>
           </div>
@@ -521,6 +529,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                 onChange={e => setDistrict(e.target.value)}
                 className={`p-2 mb-4 border rounded w-full ${districtError ? 'border-red-500' : 'border-slate-300'}`}
                 readOnly={true}
+                data-testid="client-district-field"
                 disabled
               />
               {districtError && (
@@ -548,6 +557,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                 onChange={e => setState(e.target.value)}
                 className={`p-2 mb-4 border rounded w-full ${stateError ? 'border-red-500' : 'border-slate-300'}`}
                 readOnly={true}
+                data-testid="client-state-field"
                 disabled
               />
               {stateError && (
@@ -575,6 +585,7 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
                 onChange={e => setCity(e.target.value)}
                 className={`p-2 mb-4 border rounded w-full ${cityError ? 'border-red-500' : 'border-slate-300'}`}
                 readOnly={true}
+                data-testid="client-city-field"
                 disabled
               />
               {cityError && (
@@ -594,12 +605,21 @@ const ClientForm: React.FC<ClientFormProps> = ({ clientData, closeModal }) => {
           </div>
         </div>
         <div className="flex justify-between">
-          <Button className="" onClick={closeModal} type="default">
+          <Button 
+            className="" 
+            onClick={closeModal} 
+            type="default" 
+            data-testid="client-closemodal-button"
+          >
             {intl.formatMessage({
               id: 'close.modal.button.label',
             })}
           </Button>
-          <Button htmlType="submit" type="default">
+          <Button 
+            htmlType="submit" 
+            type="default"
+            data-testid="client-save-button"
+          >
             {intl.formatMessage({
               id: 'save.client.button.label',
             })}

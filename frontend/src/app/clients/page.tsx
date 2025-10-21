@@ -77,6 +77,7 @@ const Clients = () => {
                   className="mt-8"
                   size="large"
                   onClick={() => setOpenModal(true)}
+                  data-testid="create-client-button"
                 >
                   <h1 className="text-lg">{intl.formatMessage({
                     id: 'create.client.button.label',
