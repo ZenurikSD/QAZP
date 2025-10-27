@@ -80,7 +80,10 @@ export function ClientTable<TData, TValue>({
           className="max-w-sm my-10  border-primary font-bold text-center"
         />
       </div>
-      <Table className="border-2 border-cyan-700">
+      <Table 
+        className="border-2 border-cyan-700"
+        data-testid="client-page-table">
+          
         <TableHeader className="bg-cyan-700 text-gray-100">
           {table.getHeaderGroups().map(headerGroup => (
             <TableRow key={headerGroup.id}>
@@ -102,6 +105,7 @@ export function ClientTable<TData, TValue>({
             </TableRow>
           ))}
         </TableHeader>
+
         <TableBody>
           {table.getRowModel().rows?.length ? (
             table.getRowModel().rows.map(row => (

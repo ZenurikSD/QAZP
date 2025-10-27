@@ -18,10 +18,16 @@ describe('Client', () => {
         cy.typeByTestId('newclient-email-field', 'fabioiagocortereal@imagemeaudio.com.br');
         cy.typeByTestId('newclient-zipcode-field', '72327-011');
         cy.clickByTestId('newclient-searchzipcode-button');
+        cy.get('[data-testid="newclient-streetname-field"]')
+            .invoke('attr', 'value')
+            .should('not.be.empty');
         cy.typeByTestId('newclient-steetnumber-field', '706');
         cy.typeByTestId('newclient-streetcomplement-field', 'Quadra QR 425 Conjunto 11');
         cy.clickByTestId('newclient-create-button');
 
         // verify created client in list
+        cy.get('[data-testid="client-page-table"] > tbody > tr').eq(0).within(() => {
+            cy.get('td').eq(0).should('have.text', 'Fábio Iago Corte Real');
+        })
     })
 })
