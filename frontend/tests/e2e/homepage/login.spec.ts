@@ -6,7 +6,10 @@ test('Login into QAZP', async ({page}) => {
 
     await page.getByTestId('login-username-input').fill('admin');
     await page.getByTestId('login-password-input').fill('123');
+    const responsePromise = page.waitForResponse('**/api/Dashboard');   
     await page.getByTestId('login-enter-button').click();
+    const response = await responsePromise;
 
-    await expect(page).toHaveURL('http://localhost:3000/dashboard')
+    expect(response.status()).toEqual(200);
+    await expect(page).toHaveURL('http://localhost:3000/dashboard');
 })
