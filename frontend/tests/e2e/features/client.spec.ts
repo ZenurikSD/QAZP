@@ -1,23 +1,30 @@
 import { test, expect } from '@playwright/test';
 
-test('Create a new Client', async ({page}) => { 
+/**
+ * TO-DO: 
+ * 1. Improve the test setup and destuction
+ *    - move login and client deletion to before/after hooks?
+ * 2. Move client info to an external object / "fixture"?
+ */
+test('Create a new Client', async ({ page }) => {
     // login
     await page.goto('/');
     await page.getByTestId('login-open-button').click();
-    
+
     await page.getByTestId('login-username-input').fill('admin');
     await page.getByTestId('login-password-input').fill('123');
-    const responsePromise = page.waitForResponse('**/api/Dashboard');   
+    const responsePromise = page.waitForResponse('**/api/Dashboard');
     await page.getByTestId('login-enter-button').click();
-    const response = await responsePromise;
+    await responsePromise;
 
     // go to clients page
     await page.getByTestId('sidepanel-clients').click();
+    await page.waitForURL('/clients');
     // open new client modal
     await page.getByTestId('create-client-button').click();
     // fill in required fields
     await page.getByTestId('newclient-fullname-field').fill('Kleber Paiva');
-    await page.getByTestId('newclient-document-field').fill('536.091.190-55');
+    await page.getByTestId('newclient-document-field').fill('192.630.250-88');
     await page.getByTestId('newclient-zipcode-field').fill('25055-009');
     await page.getByTestId('newclient-streetnumber-field').fill('255');
     // search for CEP
@@ -34,12 +41,21 @@ test('Create a new Client', async ({page}) => {
     // Click on "Create Client" button
     await page.getByTestId('newclient-create-button').click();
     // assert that client is listed in Clients page
+    //  is there a better way to do this?
     await expect(
-        page.getByTestId('client-page-table')
-            .filter({has: 
-                page.getByRole('row')
-            })
-        ).toHaveText('Kleber Paiva');
-    
-    //remove client via API --- use fixture?
+        page
+            .getByTestId('clients-page-table')
+            .getByRole('row', { name: 'Kleber Paiva' })
+    ).toBeVisible();
+
+    //remove client via API
+    //1. get client Id via their documentId
+    const apiResponse = await page.request.get(`http://localhost:5196/api/Client/documentId/${19263025088}`);
+    const clientId = (await apiResponse.json()).id;
+    //2. delete client with this Id
+    expect((await
+        page.request
+            .delete(`http://localhost:5196/api/Client/${clientId}`))
+            .status()
+    ).toBe(204);
 });

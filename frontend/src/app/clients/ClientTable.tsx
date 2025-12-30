@@ -82,7 +82,7 @@ export function ClientTable<TData, TValue>({
       </div>
       <Table 
         className="border-2 border-cyan-700"
-        data-testid="client-page-table">
+        data-testid="clients-page-table">
           
         <TableHeader className="bg-cyan-700 text-gray-100">
           {table.getHeaderGroups().map(headerGroup => (
