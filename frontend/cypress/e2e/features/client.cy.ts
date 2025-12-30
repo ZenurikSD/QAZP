@@ -20,7 +20,7 @@ describe('Client', () => {
         cy.get('[data-testid="newclient-streetname-field"]')
             .invoke('attr', 'value')
             .should('not.be.empty');
-        cy.typeByTestId('newclient-steetnumber-field', '706');
+        cy.typeByTestId('newclient-streetnumber-field', '706');
         cy.typeByTestId('newclient-streetcomplement-field', 'Quadra QR 425 Conjunto 11');
         cy.clickByTestId('newclient-create-button');
 

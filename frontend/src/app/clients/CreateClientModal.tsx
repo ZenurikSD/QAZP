@@ -486,7 +486,7 @@ const CreateClientModal: React.FC<createClientProps> = ({
                     id: 'create.client.page.streetNumber.field.placeholder',
                   })}
                   value={addressNumber}
-                  data-testid="newclient-steetnumber-field"
+                  data-testid="newclient-streetnumber-field"
                   required
                 />
                 {addressNumberError && (

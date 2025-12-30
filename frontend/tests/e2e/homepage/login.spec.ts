@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('Login into QAZP', async ({page}) => {
-    await page.goto('http://localhost:3000');
+    await page.goto('/');
     await page.getByTestId('login-open-button').click();
 
     await page.getByTestId('login-username-input').fill('admin');
